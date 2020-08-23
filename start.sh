@@ -1,0 +1,1 @@
+bin/php/php src/Frago9876543210/PocketEditionClient/run.php
