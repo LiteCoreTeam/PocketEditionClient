@@ -27,7 +27,7 @@ class MoveEntityPacket extends DataPacket{
 		$this->headYaw = $this->getByteRotation();
 		$this->yaw = $this->getByteRotation();
 		$this->onGround = $this->getBool();
-		$this->teleported = $this->getBool();
+		//$this->teleported = $this->getBool();
 	}
 
 	public function encodePayload() : void{

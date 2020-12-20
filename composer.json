@@ -21,6 +21,7 @@
 	"ext-yaml": ">=2.0.0",
 	"ext-zip": "*",
 	"ext-zlib": ">=1.2.11",
+	"ext-parallel": "*",
 	"mdanter/ecc": "^0.5.0",
 	"pocketmine/pocketmine-mp": "dev-master",
 	"pocketmine/raklib": "dev-master",

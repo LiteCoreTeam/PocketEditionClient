@@ -62,7 +62,6 @@ class PacketPool{
 		static::registerPacket(new InventoryActionPacket());
 		static::registerPacket(new ContainerOpenPacket());
 		static::registerPacket(new ContainerClosePacket());
-		static::registerPacket(new ContainerClosePacke());
 		static::registerPacket(new ContainerSetSlotPacket());
 		static::registerPacket(new ContainerSetDataPacket());
 		static::registerPacket(new ContainerSetContentPacket());

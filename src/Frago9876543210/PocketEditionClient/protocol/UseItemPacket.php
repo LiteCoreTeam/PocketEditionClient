@@ -42,9 +42,8 @@ class UseItemPacket extends DataPacket{
 	}
 
 	protected function encodePayload() : void{
-		$this->putBlockPosition($this->x,$this->y,$this->z);
 		$this->putUnsignedVarInt($this->blockId);
-		$this->putVarInt($this->face);
+		$this->putUnsignedVarInt($this->face);
 		$this->putVector3($this->from);
 		$this->putVector3($this->position);
 		$this->putVarInt($this->slot);

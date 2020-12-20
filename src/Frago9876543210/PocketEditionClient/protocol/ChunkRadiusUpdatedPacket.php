@@ -11,8 +11,6 @@ class ChunkRadiusUpdatedPacket extends DataPacket{
 
 	public $radius;
 
-	public $rradius;
-
 	protected function decodePayload() : void{
 		$this->radius = $this->getVarInt();
 	}

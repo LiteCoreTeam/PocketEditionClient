@@ -47,7 +47,8 @@ class RakNetPool{
 	 * @return null|Packet
 	 */
 	public static function getPacket(string $buffer) : ?Packet{
-		$packet = isset(self::$pool[($pid = ord($buffer{0}))]) ? clone self::$pool[$pid] : new Datagram();
+		$pid = ord($buffer{0});
+		$packet = isset(self::$pool[($pid)]) ? clone self::$pool[$pid] : new Datagram();
 		if(!$packet instanceof Packet || ($packet instanceof Datagram && $pid >= 0x8f)){
 			return null;
 		}

@@ -11,6 +11,7 @@ class FullChunkDataPacket extends DataPacket{
 
 	public $chunkX;
 	public $chunkZ;
+	/** @var string */
 	public $data;
 
 	protected function decodePayload() : void{

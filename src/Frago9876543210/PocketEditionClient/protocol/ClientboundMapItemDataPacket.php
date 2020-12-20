@@ -88,8 +88,7 @@ class ClientboundMapItemDataPacket extends DataPacket{
 		$this->putUnsignedVarInt($type);
 
 		if(($type & 0x08) !== 0){ //TODO: find out what these are for
-			//$this->putUnsignedVarInt($eidsCount);
-			$this->putUnsignedVarInt(PHP_INT_MAX);
+			$this->putUnsignedVarInt($eidsCount);
 			foreach($this->eids as $eid){
 				$this->putEntityUniqueId($eid);
 			}

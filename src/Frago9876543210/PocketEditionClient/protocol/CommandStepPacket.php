@@ -21,8 +21,8 @@ class CommandStepPacket extends DataPacket{
 	protected function decodePayload() : void{
 		$this->command = $this->getString();
 		$this->overload = $this->getString();
-		$this->uvarint1 = $this->getString(); // getString
-		$this->currentStep = $this->getString(); // getString
+		$this->uvarint1 = $this->getUnsignedVarInt();
+		$this->currentStep = $this->getUnsignedVarInt();
 		$this->done = $this->getBool();
 		$this->clientId = $this->getUnsignedVarLong();
 		$this->inputJson = json_decode($this->getString());
@@ -34,12 +34,12 @@ class CommandStepPacket extends DataPacket{
 	protected function encodePayload() : void{
 		$this->putString($this->command);
 		$this->putString($this->overload);
-		$this->putString($this->uvarint1); // putString
-		$this->putUnsignedVarLong($this->currentStep); // putString
+		$this->putUnsignedVarInt($this->uvarint1);
+		$this->putUnsignedVarInt($this->currentStep);
 		$this->putBool($this->done);
 		$this->putUnsignedVarLong($this->clientId);
-		$this->putString($this->inputJson);
-		$this->putString($this->outputJson);
+		$this->putString(json_encode($this->inputJson));
+		$this->putString(json_encode($this->outputJson));
 
 		$this->put("\x00\x00\x00"); //TODO: command origin data
 	}

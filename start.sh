@@ -1,1 +1,1 @@
-bin/php/php src/Frago9876543210/PocketEditionClient/run.php
+bin/php/php.exe src/Frago9876543210/PocketEditionClient/run.php
